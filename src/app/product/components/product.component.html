@@ -1,0 +1,31 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ product.title | uppercase }}</mat-card-title>
+    <mat-card-subtitle>{{ product.price | currency: "USD" }}</mat-card-subtitle>
+  </mat-card-header>
+  <div class="crop-image">
+    <img [src]="product.image" />
+  </div>
+  <mat-card-content>
+    <p>{{ product.description | slice: 0:10 }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button (click)="addToCart()" mat-raised-button color="primary">
+      Add to Cart
+    </button>
+    <a mat-button [routerLink]="['/products', product.id]">view details</a>
+  </mat-card-actions>
+</mat-card>
+<!-- Se aplica la directiva appHighlight que aplica el color verde
+<p appHighlight>{{ product.title | uppercase }}</p>
+<img [src]="product.image" />
+<p>
+  <strong>{{ product.price | currency: "USD" }}</strong>
+</p>
+<p>{{ product.description | slice: 0:10 }}</p>
+<p>{{ today | date: "medium" }}</p>
+<button (click)="addToCart()" mat-raised-button color="primary">
+  Add to Cart
+</button>
+<a [routerLink]="['/products', product.id]">view details</a>
+-->

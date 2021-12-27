@@ -1,0 +1,8 @@
+<div *ngIf="product">
+  <section>
+    <img [src]="product.image" alt="{{ product.title }}" width="50%" />
+    <h1>{{ product.title }}</h1>
+    <p>{{ product.price | currency }}</p>
+    <p>{{ product.description }}</p>
+  </section>
+</div>
